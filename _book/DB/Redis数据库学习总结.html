@@ -1,0 +1,570 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis数据库学习总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Oracle数据库基础总结.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    ServiceStack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                <a href="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                    
+                    AutoQuery RDBMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ServiceStack/AutoQuery增删改查（含前端）.html">
+            
+                <a href="../ServiceStack/AutoQuery增删改查（含前端）.html">
+            
+                    
+                    AutoQuery增删改查（含前端）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ServiceStack/OrmLite其他使用方式.html">
+            
+                <a href="../ServiceStack/OrmLite其他使用方式.html">
+            
+                    
+                    OrmLite其他使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ServiceStack/Ormlite学习.html">
+            
+                <a href="../ServiceStack/Ormlite学习.html">
+            
+                    
+                    Ormlite学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                <a href="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                    
+                    ServiceStack.OrmLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ServiceStack/ServiceStack配置.html">
+            
+                <a href="../ServiceStack/ServiceStack配置.html">
+            
+                    
+                    ServiceStack配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    数据库操作
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="MongoDB数据库学习总结.html">
+            
+                <a href="MongoDB数据库学习总结.html">
+            
+                    
+                    MongoDB数据库学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MySql存储过程基础.html">
+            
+                <a href="MySql存储过程基础.html">
+            
+                    
+                    MySql存储过程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Mysql存储过程语法相关.html">
+            
+                <a href="Mysql存储过程语法相关.html">
+            
+                    
+                    Mysql存储过程语法相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="MySQL数据库基础总结.html">
+            
+                <a href="MySQL数据库基础总结.html">
+            
+                    
+                    MySQL数据库基础总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Oracle数据库基础总结.html">
+            
+                <a href="Oracle数据库基础总结.html">
+            
+                    
+                    Oracle数据库基础总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="Redis数据库学习总结.html">
+            
+                <a href="Redis数据库学习总结.html">
+            
+                    
+                    Redis数据库学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redis数据库学习总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redis&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">Redis&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</h1>
+<h2 id="&#x4E00;&#xFF0C;&#x4E86;&#x89E3;redis&#x6570;&#x636E;&#x5E93;">&#x4E00;&#xFF0C;&#x4E86;&#x89E3;Redis&#x6570;&#x636E;&#x5E93;</h2>
+<p>&#x5B66;&#x4E60;&#x76EE;&#x7684;&#xFF1A;
+1&#xFF0C;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;&#x5E76;&#x4F1A;&#x4F7F;&#x7528;redis&#x6570;&#x636E;&#x5E93;
+2&#xFF0C;&#x4E86;&#x89E3;hash&#xFF0C;list&#xFF0C;set&#xFF0C;sortedset&#x7B49;&#x6570;&#x636E;&#x7ED3;&#x6784;
+3&#xFF0C;&#x63A5;&#x89E6;nosql&#x6570;&#x636E;&#x5E93;</p>
+<h3 id="1redis&#x662F;&#x4EC0;&#x4E48;">1.Redis&#x662F;&#x4EC0;&#x4E48;</h3>
+<p> Redis &#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x6027;&#x80FD;&#x7684;key-value&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728;&#x90E8; &#x5206;&#x573A;&#x5408;&#x53EF;&#x4EE5;&#x5BF9;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x8D77;&#x5230;&#x5F88;&#x597D;&#x7684;&#x8865;&#x5145;&#x4F5C;&#x7528;&#x3002;Redis&#x652F;&#x6301;&#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#x3002;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4ECE;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x5411;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x540C;&#x6B65;&#xFF0C;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x662F;&#x5173;&#x8054;&#x5176;&#x4ED6;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;Redis&#x53EF;&#x6267;&#x884C;&#x5355;&#x5C42;&#x6811;&#x590D;&#x5236;&#x3002;&#x5B58;&#x76D8;&#x53EF;&#x4EE5;&#x6709;&#x610F;&#x65E0;&#x610F;&#x7684;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5199;&#x64CD;&#x4F5C;&#x3002;&#x7531;&#x4E8E;&#x5B8C;&#x5168;&#x5B9E;&#x73B0;&#x4E86;&#x53D1;&#x5E03;/&#x8BA2;&#x9605;&#x673A;&#x5236;&#xFF0C;&#x4F7F;&#x5F97;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x540C;&#x6B65;&#x6811;&#x65F6;&#xFF0C;&#x53EF;&#x8BA2;&#x9605;&#x4E00;&#x4E2A;&#x9891;&#x9053;&#x5E76;&#x63A5;&#x6536;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x6574;&#x7684;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x8BB0;&#x5F55;&#x3002;&#x540C;&#x6B65;&#x5BF9;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x7684;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x548C;&#x6570;&#x636E;&#x5197;&#x4F59;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x3002;</p>
+<h3 id="2redis&#x7684;&#x4F18;&#x52BF;">2.Redis&#x7684;&#x4F18;&#x52BF;</h3>
+<ol>
+<li>Redis&#x5C5E;&#x4E8E;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6027;&#x80FD;&#x53CA;&#x9AD8;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x78C1;&#x76D8;&#x4E2D;&#x4EE5;&#x4F9B;&#x4E0B;&#x6B21;&#x4F7F;&#x7528;&#x3002;</li>
+<li>Redis&#x4E0D;&#x4EC5;&#x4EC5;&#x652F;&#x6301;&#x7B80;&#x5355;&#x7684;key-value&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x63D0;&#x4F9B;list&#xFF0C;set&#xFF0C;zset&#xFF0C;hash&#x7B49;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x5B58;&#x50A8;&#x3002;</li>
+<li>Redis&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#xFF0C;&#x540C;&#x65F6;Redis&#x8FD8;&#x652F;&#x6301;&#x5BF9;&#x51E0;&#x4E2A;&#x64CD;&#x4F5C;&#x5408;&#x5E76;&#x540E;&#x7684;&#x539F;&#x5B50;&#x6027;&#x6267;&#x884C;&#x3002;&#xFF08;&#x4E8B;&#x52A1;&#xFF09;</li>
+<li>Redis&#x8FD8;&#x652F;&#x6301; publish/subscribe, &#x901A;&#x77E5;, key &#x8FC7;&#x671F;&#x7B49;&#x4F17;&#x591A;&#x7279;&#x6027;&#x3002;</li>
+<li>Redis&#x652F;&#x6301;&#x6570;&#x636E;&#x7684;&#x5907;&#x4EFD;&#xFF0C;&#x5373;master-slave&#x6A21;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x5907;&#x4EFD;&#x3002;</li>
+</ol>
+<h3 id="3&#x672C;&#x6B21;&#x5B66;&#x4E60;redis&#x4F7F;&#x7528;&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;">3.&#x672C;&#x6B21;&#x5B66;&#x4E60;Redis&#x4F7F;&#x7528;&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;</h3>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100" target="_blank">https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100</a>
+&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#xFF1A;Redis Desktop Manager</p>
+<h2 id="&#x4E8C;&#xFF0C;redis&#x5E38;&#x7528;&#x6570;&#x636E;&#x4E0E;&#x547D;&#x4EE4;&#x603B;&#x7ED3;">&#x4E8C;&#xFF0C;Redis&#x5E38;&#x7528;&#x6570;&#x636E;&#x4E0E;&#x547D;&#x4EE4;&#x603B;&#x7ED3;</h2>
+<h3 id="1key&#x547D;&#x4EE4;">1.key&#x547D;&#x4EE4;</h3>
+<ul>
+<li>keys <em>         --- &#x83B7;&#x53D6;key&#xFF0C;</em>&#x8868;&#x793A;&#x6240;&#x6709;key</li>
+<li>TYPE key         --- &#x7528;&#x6765;&#x83B7;&#x53D6;&#x67D0;key&#x7684;&#x7C7B;&#x578B;</li>
+<li>del key1       --- &#x5220;&#x9664;key</li>
+<li>exists key    --- &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;key</li>
+<li>RANDOMKEY        --- &#x8FD4;&#x56DE;&#x968F;&#x673A;&#x7684;&#x4E00;&#x4E2A;key</li>
+<li>move key 1     --- &#x5C06;&#x5F53;&#x524D;&#x7684;&#x6570;&#x636E;&#x5E93;key&#x79FB;&#x52A8;&#x5230;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x5E93;,&#x76EE;&#x6807;&#x5E93;&#x6709;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x79FB;&#x52A8;</li>
+<li>RENAME key newkey    --- &#x66F4;&#x6539;key&#x7684;&#x540D;&#x79F0;</li>
+</ul>
+<h3 id="2string&#x547D;&#x4EE4;">2.string&#x547D;&#x4EE4;</h3>
+<p><strong>&#x6700;&#x666E;&#x901A;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x683C;&#x5F0F;</strong> </p>
+<ul>
+<li>set key value --- &#x8BBE;&#x7F6E;key</li>
+<li>get key        --- &#x83B7;&#x53D6;key&#x7684;&#x503C;</li>
+<li>mset key1 value1 key2 value2 key3 value3</li>
+<li>mget key1 key2 key3</li>
+<li>STRLEN key    --- &#x8FD4;&#x56DE; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x957F;&#x5EA6;</li>
+</ul>
+<h3 id="3&#x54C8;&#x5E0C;&#x8868;&#x547D;&#x4EE4;">3.&#x54C8;&#x5E0C;&#x8868;&#x547D;&#x4EE4;</h3>
+<p><strong>hash&#x8868;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x8868;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</strong></p>
+<ul>
+<li>Hset key field value --- &#x8BBE;&#x7F6E;&#x54C8;&#x5E0C;key</li>
+<li>Hget key field     --- &#x83B7;&#x53D6;&#x54C8;&#x5E0C;key&#x7684;&#x503C;</li>
+<li>HMSET key field1 value1 field2 value2     --- &#x540C;&#x65F6;&#x5C06;&#x591A;&#x4E2A;(&#x57DF;-&#x503C;)&#x5BF9;&#x8BBE;&#x7F6E;&#x5230;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#x3002;</li>
+<li>HMGET key field1 field2        --- &#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x7ED9;&#x5B9A;&#x57DF;&#x4E2D;&#x7684;&#x503C;</li>
+<li>HDEL key field1                --- &#x5220;&#x9664;&#x7ED9;&#x5B9A;&#x57DF;&#x4E2D;&#x7684;&#x503C;</li>
+<li>HLEN key                        --- &#x83B7;&#x53D6;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x91CF;</li>
+</ul>
+<h3 id="4list&#x5217;&#x8868;&#x547D;&#x4EE4;">4.List&#x5217;&#x8868;&#x547D;&#x4EE4;</h3>
+<p><strong>List&#x662F;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x94FE;&#x8868;&#x5DE6;&#xFF0C;&#x53F3;&#x4E24;&#x8FB9;&#x5206;&#x522B;&#x64CD;&#x4F5C;</strong></p>
+<ul>
+<li>LPUSH key value1 [value2]     --- &#x5C06;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x503C;&#x63D2;&#x5165;&#x5230;&#x5217;&#x8868;&#x5934;&#x90E8;</li>
+<li>LPUSHX key value                 --- &#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x63D2;&#x5165;&#x5230;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5217;&#x8868;&#x5934;&#x90E8;</li>
+<li>LPOP key                         --- &#x79FB;&#x51FA;&#x5E76;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</li>
+<li>LLEN key                         --- &#x83B7;&#x53D6;&#x5217;&#x8868;&#x957F;&#x5EA6;</li>
+<li>LINDEX key index                 --- &#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;</li>
+</ul>
+<h3 id="5set&#x96C6;&#x5408;&#x547D;&#x4EE4;">5.set&#x96C6;&#x5408;&#x547D;&#x4EE4;</h3>
+<p><strong>Set&#x5C31;&#x662F;&#x4E00;&#x5806;&#x4E0D;&#x91CD;&#x590D;&#x503C;&#x7684;&#x7EC4;&#x5408;</strong></p>
+<p>*&#x56E0;&#x4E3A; Redis &#x4E3A;&#x96C6;&#x5408;&#x63D0;&#x4F9B;&#x4E86;&#x6C42;&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x3001;&#x5DEE;&#x96C6;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x9009;&#x62E9;&#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x8FD8;&#x662F;&#x5B58;&#x96C6;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x96C6;&#x5408;&#x4E2D;</p>
+<ul>
+<li>SADD key member1 member2     --- &#x5411;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6210;&#x5458;</li>
+<li>SDIFF key1 key2            --- &#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x96C6;</li>
+<li>SINTER key1 key2             --- &#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;</li>
+<li>SUNION key1 [key2]         --- &#x8FD4;&#x56DE;&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;</li>
+<li>SISMEMBER key member         --- &#x5224;&#x65AD; member &#x5143;&#x7D20;&#x662F;&#x5426;&#x662F;&#x96C6;&#x5408; key &#x7684;&#x6210;&#x5458;</li>
+<li>SMEMBERS key                 --- &#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</li>
+</ul>
+<h3 id="6&#x6709;&#x5E8F;&#x96C6;&#x5408;sorted-set&#x547D;&#x4EE4;">6.&#x6709;&#x5E8F;&#x96C6;&#x5408;(sorted set)&#x547D;&#x4EE4;</h3>
+<p><strong>zset&#x662F;set&#x7684;&#x4E00;&#x4E2A;&#x5347;&#x7EA7;&#x7248;&#x672C;&#xFF0C;&#x4ED6;&#x5728;set&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x987A;&#x5E8F;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E00;&#x5C5E;&#x6027;&#x5728;&#x6DFB;&#x52A0;&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#xFF0C;&#x6BCF;&#x6B21;&#x6307;&#x5B9A;&#x540E;&#xFF0C;zset&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6309;&#x65B0;&#x7684;&#x503C;&#x8C03;&#x6574;&#x987A;&#x5E8F;&#x3002;</strong></p>
+<ul>
+<li>ZADD key score1 member1 score2 member2    --- &#x5411;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x6210;&#x5458;&#xFF0C;&#x6216;&#x66F4;&#x65B0;&#x5DF2;&#x5B58;&#x5728;&#x6210;&#x5458;&#x7684;&#x5206;&#x6570;</li>
+<li>ZCARD key                                 --- &#x83B7;&#x53D6;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;&#x6570;</li>
+<li>ZREMRANGEBYLEX key min max                 --- &#x79FB;&#x9664;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#x5B57;&#x5178;&#x533A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</li>
+</ul>
+<h3 id="7&#x5176;&#x4ED6;redis&#x547D;&#x4EE4;">7.&#x5176;&#x4ED6;redis&#x547D;&#x4EE4;</h3>
+<ul>
+<li>select 0         --- &#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5E93;</li>
+<li>flushdb          --- &#x5220;&#x9664;&#x5F53;&#x524D;&#x5E93;&#x7684;&#x6240;&#x6709;key</li>
+<li>BGSAVE        --- &#x5728;&#x540E;&#x53F0;&#x5F02;&#x6B65;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6570;&#x636E;&#x5230;&#x78C1;&#x76D8;</li>
+<li>TIME             --- &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;</li>
+<li>DBSIZE         --- &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684; key &#x7684;&#x6570;&#x91CF;</li>
+</ul>
+<h2 id="&#x4E09;&#xFF0C;redis&#x5E38;&#x7528;&#x529F;&#x80FD;&#x603B;&#x7ED3;">&#x4E09;&#xFF0C;Redis&#x5E38;&#x7528;&#x529F;&#x80FD;&#x603B;&#x7ED3;</h2>
+<h3 id="1&#x53D1;&#x5E03;&#x8BA2;&#x9605;">1.&#x53D1;&#x5E03;&#x8BA2;&#x9605;</h3>
+<p><strong>&#x5B9A;&#x4E49;&#xFF1A;Redis &#x53D1;&#x5E03;&#x8BA2;&#x9605;(pub/sub)&#x662F;&#x4E00;&#x79CD;&#x6D88;&#x606F;&#x901A;&#x4FE1;&#x6A21;&#x5F0F;&#xFF1A;&#x53D1;&#x9001;&#x8005;(pub)&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x8BA2;&#x9605;&#x8005;(sub)&#x63A5;&#x6536;&#x6D88;&#x606F;&#x3002;</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#xFF1A;</p>
+<pre><code>gaoryrds:1&gt;subscribe rdsread
+&#x5207;&#x6362;&#x5230;&#x63A8;&#x9001;/&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#xFF0C;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#x9875;&#x6765;&#x505C;&#x6B62;&#x63A5;&#x6536;&#x4FE1;&#x606F;&#x3002;
+ 1)  &quot;subscribe&quot;
+ 2)  &quot;rdsread&quot;
+ 3)  &quot;1&quot;
+
+gaoryrds:1&gt;subscribe rdsread
+&#x5207;&#x6362;&#x5230;&#x63A8;&#x9001;/&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#xFF0C;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#x9875;&#x6765;&#x505C;&#x6B62;&#x63A5;&#x6536;&#x4FE1;&#x606F;&#x3002;
+ 1)  &quot;subscribe&quot;
+ 2)  &quot;rdsread&quot;
+ 3)  &quot;1&quot;
+</code></pre><p>&#x7136;&#x540E;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x9891;&#x9053;&#x4F7F;&#x7528;rdsread&#x53D1;&#x5E03;&#x6D88;&#x606F;&#xFF1A;</p>
+<pre><code>gaoryrds:2&gt;PUBLISH rdsread &quot;risagraet&quot;
+</code></pre><p>&#x6240;&#x6709;&#x8BA2;&#x9605;&#x8005;&#x9891;&#x9053;&#x4F1A;&#x663E;&#x793A;&#x53D1;&#x5E03;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>gaoryrds:1&gt;subscribe rdsread
+&#x5207;&#x6362;&#x5230;&#x63A8;&#x9001;/&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#xFF0C;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#x9875;&#x6765;&#x505C;&#x6B62;&#x63A5;&#x6536;&#x4FE1;&#x606F;&#x3002;
+ 1)  &quot;subscribe&quot;
+ 2)  &quot;rdsread&quot;
+ 3)  &quot;1&quot;
+ 1)  &quot;message&quot;
+ 2)  &quot;rdsread&quot;
+ 3)  &quot;risagraet&quot;
+</code></pre><ul>
+<li>PUBLISH channel message         --- &#x5C06;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x9891;&#x9053;&#x3002;</li>
+<li>SUBSCRIBE channel              --- &#x8BA2;&#x9605;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9891;&#x9053;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+<li>UNSUBSCRIBE channel              --- &#x6307;&#x9000;&#x8BA2;&#x7ED9;&#x5B9A;&#x7684;&#x9891;&#x9053;&#x3002;</li>
+</ul>
+<h3 id="2&#x4E8B;&#x52A1;">2.&#x4E8B;&#x52A1;</h3>
+<p><strong>redis&#x4E2D;&#x4E8B;&#x52A1;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x5BF9;&#x591A;&#x6761;&#x547D;&#x4EE4;&#x7684;&#x6253;&#x5305;&#x6267;&#x884C;</strong></p>
+<p>Redis &#x4E8B;&#x52A1;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E14;&#x5E26;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x4FDD;&#x8BC1;&#xFF1A;</p>
+<ul>
+<li>&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#x5728;&#x53D1;&#x9001; EXEC &#x547D;&#x4EE4;&#x524D;&#x88AB;&#x653E;&#x5165;&#x961F;&#x5217;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x6536;&#x5230; EXEC &#x547D;&#x4EE4;&#x540E;&#x8FDB;&#x5165;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x4E8B;&#x52A1;&#x4E2D;&#x4EFB;&#x610F;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x547D;&#x4EE4;&#x4F9D;&#x7136;&#x88AB;&#x6267;&#x884C;&#x3002;</li>
+<li>&#x5728;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7684;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x4E0D;&#x4F1A;&#x63D2;&#x5165;&#x5230;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#x4E2D;&#x3002;</li>
+</ul>
+<p>&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4ECE;&#x5F00;&#x59CB;&#x5230;&#x6267;&#x884C;&#x4F1A;&#x7ECF;&#x5386;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#xFF1A;&#x5F00;&#x59CB;&#x4E8B;&#x52A1;&#xFF0C;&#x547D;&#x4EE4;&#x5165;&#x961F;&#xFF0C;&#x6267;&#x884C;&#x4E8B;&#x52A1;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;
+    gaoryrds:2&gt;MULTI
+    &quot;OK&quot;
+    gaoryrds:2&gt;set key1 value1
+    &quot;QUEUED&quot;
+    gaoryrds:2&gt;set key2 value2
+    &quot;QUEUED&quot;
+    gaoryrds:2&gt;EXEC
+     1)  &quot;OK&quot;
+     2)  &quot;OK&quot;</p>
+<ul>
+<li>DISCARD         --- &#x53D6;&#x6D88;&#x4E8B;&#x52A1;&#xFF0C;&#x653E;&#x5F03;&#x6267;&#x884C;&#x4E8B;&#x52A1;&#x5757;&#x5185;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x3002;</li>
+<li>EXEC             --- &#x6267;&#x884C;&#x6240;&#x6709;&#x4E8B;&#x52A1;&#x5757;&#x5185;&#x7684;&#x547D;&#x4EE4;&#x3002;</li>
+<li>MULTI         --- &#x6807;&#x8BB0;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5757;&#x7684;&#x5F00;&#x59CB;&#x3002;</li>
+<li>UNWATCH         --- &#x53D6;&#x6D88; WATCH &#x547D;&#x4EE4;&#x5BF9;&#x6240;&#x6709; key &#x7684;&#x76D1;&#x89C6;&#x3002;</li>
+<li>WATCH key key1...        --- &#x76D1;&#x89C6;&#x4E00;&#x4E2A;(&#x6216;&#x591A;&#x4E2A;) key &#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x8FD9;&#x4E2A;(&#x6216;&#x8FD9;&#x4E9B;) key &#x88AB;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x6240;&#x6539;&#x52A8;&#xFF0C;&#x90A3;&#x4E48;&#x4E8B;&#x52A1;&#x5C06;&#x88AB;&#x6253;&#x65AD;&#x3002;</li>
+</ul>
+<h3 id="3&#x811A;&#x672C;">3.&#x811A;&#x672C;</h3>
+<p><strong>Redis 2.6 &#x7248;&#x672C;&#x901A;&#x8FC7;&#x5185;&#x5D4C;&#x652F;&#x6301; Lua &#x73AF;&#x5883;&#x3002;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x4E3A; EVAL&#x3002;</strong></p>
+<ul>
+<li><p>EVAL script num key key1 ... arg arg1 ... --- &#x6267;&#x884C; Lua &#x811A;&#x672C;&#x3002;</p>
+<ol>
+<li>eval&#x662F;&#x6267;&#x884C;&#x547D;&#x4EE4;</li>
+<li>script&#x662F;&#x6267;&#x884C;&#x7684;lua&#x811A;&#x672C;&#x6216;&#x8005;lua&#x811A;&#x672C;&#x7684;&#x5730;&#x5740;</li>
+<li>num&#x662F;&#x9700;&#x8981;&#x952E;&#x7684;&#x4E2A;&#x6570;</li>
+<li>key key1 ... arg arg1 ...&#x952E;&#x503C;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;</li>
+</ol>
+</li>
+<li><p>SCRIPT EXISTS script script ...         --- &#x67E5;&#x770B;&#x811A;&#x672C;&#x662F;&#x5426;&#x5DF2;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x3002;</p>
+</li>
+<li>SCRIPT FLUSH                             --- &#x4ECE;&#x811A;&#x672C;&#x7F13;&#x5B58;&#x4E2D;&#x79FB;&#x9664;&#x6240;&#x6709;&#x811A;&#x672C;&#x3002;</li>
+<li>SCRIPT KILL                             --- &#x6740;&#x6B7B;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684; Lua &#x811A;&#x672C;&#x3002;</li>
+</ul>
+<h3 id="4redis&#x5907;&#x4EFD;&#x4E0E;&#x8FD8;&#x539F;">4.Redis&#x5907;&#x4EFD;&#x4E0E;&#x8FD8;&#x539F;</h3>
+<p><strong>&#x5907;&#x4EFD;redis&#x5E93;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;SAVE&#x6216;BGSAVE&#x547D;&#x4EE4;&#x5907;&#x4EFD;&#x5F53;&#x524D;&#x5E93;&#xFF0C;&#x5C06;&#x4F1A;&#x5728;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;dump.rdb&#x6587;&#x4EF6;</strong></p>
+<p><strong>&#x8FD8;&#x539F;redis&#x5E93;&#xFF1A;&#x56E0;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x6559;&#x7A0B;&#x4E2D;&#x91CD;&#x542F;&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x8FD8;&#x539F;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x501F;&#x52A9;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x8FD8;&#x539F;dump.rdb&#x6587;&#x4EF6;</strong></p>
+<p><img src="D:\workFile\SVN\Document\&#x5B66;&#x4E60;&#x5E2E;&#x52A9;&#x6587;&#x6863;\DB\jietu.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Oracle数据库基础总结.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Oracle数据库基础总结">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis数据库学习总结","level":"1.15","depth":1,"previous":{"title":"Oracle数据库基础总结","level":"1.14","depth":1,"path":"DB/Oracle数据库基础总结.md","ref":"DB/Oracle数据库基础总结.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DB/Redis数据库学习总结.md","mtime":"2020-06-04T01:01:48.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-09T09:33:52.925Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

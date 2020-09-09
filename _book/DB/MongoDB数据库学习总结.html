@@ -1,0 +1,754 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB数据库学习总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MySql存储过程基础.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    ServiceStack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                <a href="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                    
+                    AutoQuery RDBMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ServiceStack/AutoQuery增删改查（含前端）.html">
+            
+                <a href="../ServiceStack/AutoQuery增删改查（含前端）.html">
+            
+                    
+                    AutoQuery增删改查（含前端）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ServiceStack/OrmLite其他使用方式.html">
+            
+                <a href="../ServiceStack/OrmLite其他使用方式.html">
+            
+                    
+                    OrmLite其他使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ServiceStack/Ormlite学习.html">
+            
+                <a href="../ServiceStack/Ormlite学习.html">
+            
+                    
+                    Ormlite学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                <a href="../ServiceStack/ServiceStack.OrmLite.html">
+            
+                    
+                    ServiceStack.OrmLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ServiceStack/ServiceStack配置.html">
+            
+                <a href="../ServiceStack/ServiceStack配置.html">
+            
+                    
+                    ServiceStack配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    数据库操作
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="MongoDB数据库学习总结.html">
+            
+                <a href="MongoDB数据库学习总结.html">
+            
+                    
+                    MongoDB数据库学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MySql存储过程基础.html">
+            
+                <a href="MySql存储过程基础.html">
+            
+                    
+                    MySql存储过程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Mysql存储过程语法相关.html">
+            
+                <a href="Mysql存储过程语法相关.html">
+            
+                    
+                    Mysql存储过程语法相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="MySQL数据库基础总结.html">
+            
+                <a href="MySQL数据库基础总结.html">
+            
+                    
+                    MySQL数据库基础总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Oracle数据库基础总结.html">
+            
+                <a href="Oracle数据库基础总结.html">
+            
+                    
+                    Oracle数据库基础总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Redis数据库学习总结.html">
+            
+                <a href="Redis数据库学习总结.html">
+            
+                    
+                    Redis数据库学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB数据库学习总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mongodb&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">MongoDB&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</h1>
+<h2 id="&#x4E00;&#xFF0C;&#x4E86;&#x89E3;&#x548C;&#x5B89;&#x88C5;mongodb&#x6570;&#x636E;&#x5E93;">&#x4E00;&#xFF0C;&#x4E86;&#x89E3;&#x548C;&#x5B89;&#x88C5;MongoDB&#x6570;&#x636E;&#x5E93;</h2>
+<h3 id="1mongodb&#x662F;&#x4EC0;&#x4E48;">1.MongoDB&#x662F;&#x4EC0;&#x4E48;</h3>
+<p> MongoDB&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x662F;&#x975E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5F53;&#x4E2D;&#x529F;&#x80FD;&#x6700;&#x4E30;&#x5BCC;&#xFF0C;&#x6700;&#x50CF;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7684;&#x3002;&#x5B83;&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x975E;&#x5E38;&#x677E;&#x6563;&#xFF0C;&#x662F;&#x7C7B;&#x4F3C;json&#x7684;bson&#x683C;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;Mongo&#x6700;&#x5927;&#x7684;&#x7279;&#x70B9;&#x662F;&#x5B83;&#x652F;&#x6301;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF0C;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x652F;&#x6301;&#x5BF9;&#x6570;&#x636E;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x3002;</p>
+<h3 id="2mongodb&#x7684;&#x7279;&#x70B9;&#x4E0E;&#x4E0D;&#x8DB3;">2.MongoDB&#x7684;&#x7279;&#x70B9;&#x4E0E;&#x4E0D;&#x8DB3;</h3>
+<p><strong>&#x7279;&#x70B9;</strong></p>
+<ol>
+<li>&#x9762;&#x5411;&#x6587;&#x6863;&#x5B58;&#x50A8;(&#x7C7B;JSON&#x7684;bson&#x683C;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;)&#x3002;</li>
+<li>&#x652F;&#x6301;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF0C;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x3002;</li>
+</ol>
+<p><strong>&#x7F3A;&#x70B9;</strong></p>
+<ol>
+<li>&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x52A1;</li>
+<li>MongoDB&#x6CA1;&#x6709;&#x6210;&#x719F;&#x7684;&#x7EF4;&#x62A4;&#x5DE5;&#x5177;&#x3002;</li>
+</ol>
+<h3 id="3mongodb&#x7684;&#x4E0B;&#x8F7D;&#x4E0E;&#x5B89;&#x88C5;">3.MongoDB&#x7684;&#x4E0B;&#x8F7D;&#x4E0E;&#x5B89;&#x88C5;</h3>
+<p>&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://www.mongodb.com/download-center/community" target="_blank">https://www.mongodb.com/download-center/community</a></p>
+<p><strong>&#x5B89;&#x88C5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
+<ul>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5728;c&#x76D8;&#xFF0C;&#x4FEE;&#x6539;&#x5B89;&#x88C5;&#x76D8;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;</li>
+<li>mongodb&#x5B89;&#x88C5;&#x5305;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x76EE;&#x5F55;&#xFF0C;&#x65E5;&#x5FD7;&#x4E0E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#xFF0C;</li>
+<li><p>&#x6570;&#x636E;&#x4E0E;&#x65E5;&#x5FD7;&#x9700;&#x8981;&#x5728;&#x786C;&#x76D8;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;data&#x6587;&#x4EF6;&#xFF0C;</p>
+<pre><code>  c:\&gt;cd c:\    
+  c:\&gt;mkdir data      
+  c:\&gt;cd data      
+  c:\data&gt;mkdir db    
+  c:\data&gt;cd db    
+  c:\data\db&gt;    
+</code></pre></li>
+<li><p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5728;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;.cfg&#x6587;&#x4EF6;&#xFF0C;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  systemLog:
+      destination: file          
+      path: D:\data\logs\mongod.log  
+  storage:  
+      dbPath: D:\data\db
+</code></pre></li>
+</ul>
+<p><strong>&#x521B;&#x5EFA;admin&#x7528;&#x6237;&#xFF1A;</strong>
+*&#x6CE8;&#xFF1A;mongodb&#x4E25;&#x683C;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</p>
+<pre><code>&gt; use admin
+switched to db admin
+&gt; db.createUser({user:&quot;admin&quot;,pwd:&quot;123456&quot;,roles:[&quot;root&quot;]})
+Successfully added user: { &quot;user&quot; : &quot;admin&quot;, &quot;roles&quot; : [ &quot;root&quot; ] }
+&gt; db.auth(&quot;admin&quot;,&quot;123456&quot;)
+1
+</code></pre><h2 id="&#x4E8C;&#xFF0C;&#x521B;&#x5EFA;&#xFF0C;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;">&#x4E8C;&#xFF0C;&#x521B;&#x5EFA;&#xFF0C;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;</h2>
+<h3 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;">&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</h3>
+<pre><code>&gt; use Mydatabase2   #&#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#xFF0C;&#x5426;&#x5219;&#x5207;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;
+switched to db Mydatabase2  
+&gt; db  
+Mydatabase2  
+&gt; db.Mydatabase2.insert({&quot;key2&quot;:&quot;secondmongo&quot;})  #&#x5411;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x5165;&#x6570;&#x636E;
+WriteResult({ &quot;nInserted&quot; : 1 })  
+&gt; show dbs    #&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;
+Mydatabase2  0.000GB  
+admin    0.000GB  
+config   0.000GB  
+local    0.000GB
+</code></pre><h3 id="&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;">&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;</h3>
+<pre><code>&gt; show dbs#&#x5220;&#x9664;&#x524D;&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;
+MyDB2   0.000GB
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+&gt; use MyDB2   #&#x5207;&#x6362;&#x5230;&#x76EE;&#x6807;&#x6570;&#x636E;&#x5E93;
+switched to db MyDB2
+&gt; db.dropDatabase()   #&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;
+{ &quot;dropped&quot; : &quot;MyDB2&quot;, &quot;ok&quot; : 1 }
+&gt; show dbs#&#x67E5;&#x770B;&#x5220;&#x9664;&#x540E;&#x7684;&#x6570;&#x636E;&#x5E93;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+</code></pre><h2 id="&#x4E09;&#xFF0C;&#x96C6;&#x5408;">&#x4E09;&#xFF0C;&#x96C6;&#x5408;</h2>
+<p><strong>mongodb&#x4E2D;&#x7684;&#x96C6;&#x5408;&#x76F8;&#x5F53;&#x4E8E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8868;</strong></p>
+<h3 id="1&#x521B;&#x5EFA;&#x96C6;&#x5408;">1.&#x521B;&#x5EFA;&#x96C6;&#x5408;</h3>
+<p><strong>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;db.createCollection([Listname], [options])</strong></p>
+<p>&#x53C2;&#x6570;options&#x5305;&#x542B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>capped&#xFF1A;&#x662F;&#x5426;&#x662F;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x3002;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x503C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x8986;&#x76D6;&#x6700;&#x65E9;&#x7684;&#x6587;&#x6863;&#x3002;</li>
+<li>size&#xFF1A;&#x4E3A;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x4EE5;&#x5343;&#x5B57;&#x8282;&#x8BA1;&#xFF08;KB&#xFF09;&#x3002;</li>
+<li>max&#xFF1A;&#x6307;&#x5B9A;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x4E2D;&#x5305;&#x542B;&#x6587;&#x6863;&#x7684;&#x6700;&#x5927;&#x6570;&#x91CF;&#x3002;</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;
+&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x2018;gaorylist&#x2019;&#x5E76;&#x901A;&#x8FC7;renameCollection&#x547D;&#x4EE4;&#x5BF9;&#x5176;&#x91CD;&#x547D;&#x540D;</p>
+<pre><code>&gt; db.createCollection(&quot;grylist&quot;,{capped:true,size:1024,max:100})
+{ &quot;ok&quot; : 1 }
+&gt; show collections
+grylist
+&gt; db.grylist.renameCollection(&quot;gryL&quot;)
+{ &quot;ok&quot; : 1 }
+</code></pre><h3 id="2&#x5220;&#x9664;&#x96C6;&#x5408;">2.&#x5220;&#x9664;&#x96C6;&#x5408;</h3>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; show collections
+gryL
+gryN
+&gt; db.gryN.drop()
+true
+</code></pre><h3 id="3&#x65B0;&#x589E;&#x64CD;&#x4F5C;">3.&#x65B0;&#x589E;&#x64CD;&#x4F5C;</h3>
+<p>&#x4F7F;&#x7528; insert() &#x65B9;&#x6CD5;&#x5411;&#x96C6;&#x5408;&#x4E2D;&#x63D2;&#x5165;&#x6587;&#x6863;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.insert({aa:&apos;111&apos;,bb:&apos;222&apos;})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.gryL.insert({aa:&apos;halou&apos;,bb:&apos;worde&apos;})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;111&quot;, &quot;bb&quot; : &quot;222&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece1493b28a1d21b81cf404&quot;), &quot;aa&quot; : &quot;halou&quot;, &quot;bb&quot; : &quot;worde&quot; }
+</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x5148;&#x5C06;&#x6570;&#x636E;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5728;&#x63D2;&#x5165;&#x96C6;&#x5408;&#x4E2D;&#xFF1A;</p>
+<pre><code>&gt; value=({aa:&apos;hahal&apos;,bb:&apos;wowod&apos;})
+{ &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+&gt; db.gryL.insert(value)
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;111&quot;, &quot;bb&quot; : &quot;222&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece1493b28a1d21b81cf404&quot;), &quot;aa&quot; : &quot;halou&quot;, &quot;bb&quot; : &quot;worde&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+</code></pre><h3 id="4&#x4FEE;&#x6539;&#x64CD;&#x4F5C;">4.&#x4FEE;&#x6539;&#x64CD;&#x4F5C;</h3>
+<h4 id="1&#x4F7F;&#x7528;update&#x8BED;&#x6CD5;">1.&#x4F7F;&#x7528;Update&#x8BED;&#x6CD5;</h4>
+<p>db.collection.update(<br>   &lt; query&gt;,              #&#x76F8;&#x5F53;&#x4E8E;sql&#x4E2D;&#x7684;where&#xFF0C;&#x7528;&#x4E8E;&#x7B5B;&#x9009;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;<br>   &lt; update&gt;,              #&#x76F8;&#x5F53;&#x4E8E;sql&#x4E2D;&#x7684;set&#xFF0C;&#x4FEE;&#x6539;&#x76EE;&#x6807;&#x6570;&#x636E;<br>   {<br>     upsert: &lt; boolean&gt;,    #&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;update&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x662F;&#x5426;&#x63D2;&#x5165;&#x65B0;&#x8BB0;&#x5F55;, &#x9ED8;&#x8BA4;false&#xFF0C;&#x4E0D;&#x63D2;&#x5165;<br>     multi: &lt; boolean&gt;,      #&#x9ED8;&#x8BA4;&#x662F;false,&#x53EA;&#x66F4;&#x65B0;&#x627E;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x4E3A;true,&#x5168;&#x90E8;&#x66F4;&#x65B0;&#x3002;<br>     writeConcern: &lt; document&gt;  #&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x7EA7;&#x522B;&#x3002;<br>   }<br>)</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.update({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;)},{aa:&apos;hl&apos;})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;hl&quot; }
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x51FA;&#x73B0;&#x4E86;&#x610F;&#x5916;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8981;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x9700;&#x8981;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x7B26; $set&#xFF1A;</p>
+<pre><code>&gt; db.gryL.update({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;)},{aa:&apos;h2&apos;,bb:&apos;w2&apos;})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.update({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;)},{$set:{aa:&apos;hl&apos;}})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;hl&quot;, &quot;bb&quot; : &quot;w2&quot; }
+</code></pre><p>&#x5E38;&#x89C1;&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;</p>
+<ul>
+<li>$set&#xFF1A;&#x4FEE;&#x6539;&#x6587;&#x6863;&#x4E2D;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x503C;</li>
+<li>$inc&#xFF1A;&#x5BF9;&#x6570;&#x5B57;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x52A0;&#x51CF;&#xFF0C;</li>
+<li>$unset&#xFF1A;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x503C;</li>
+<li>$push&#xFF1A;&#x7ED9;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x589E;&#x52A0;&#x503C;</li>
+<li>$pushAll&#xFF1A;&#x7C7B;&#x4F3C;push&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x589E;&#x52A0;&#x591A;&#x4E2A;&#x503C;&#xFF0C;&#x683C;&#x5F0F;{$pushAll:{cc:[&quot;A1&quot;,&quot;A2&quot;]}}</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.update({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;)},{$push:{cc:&apos;bmwxl&apos;}})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;hl&quot;, &quot;bb&quot; : &quot;w2&quot;, &quot;cc&quot; : [ &quot;bmwxl&quot; ] }
+&gt; db.gryL.update({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;)},{$push:{cc:&apos;bmwx3&apos;}})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;hl&quot;, &quot;bb&quot; : &quot;w2&quot;, &quot;cc&quot; : [ &quot;bmwxl&quot;, &quot;bmwx3&quot; ] }
+</code></pre><h4 id="2&#x4F7F;&#x7528;save&#x8BED;&#x6CD5;">2.&#x4F7F;&#x7528;save&#x8BED;&#x6CD5;</h4>
+<p><strong>save() &#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x6587;&#x6863;&#x6765;&#x66FF;&#x6362;&#x5DF2;&#x6709;&#x6587;&#x6863;&#xFF0C;_id &#x4E3B;&#x952E;&#x5B58;&#x5728;&#x5C31;&#x66F4;&#x65B0;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5C31;&#x63D2;&#x5165;&#x3002;</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.save({_id : ObjectId(&apos;5ece1465b28a1d21b81cf403&apos;),cc:&apos;bmwx3&apos;})
+WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;cc&quot; : &quot;bmwx3&quot; }
+</code></pre><h3 id="5&#x5220;&#x9664;&#x64CD;&#x4F5C;remove">5.&#x5220;&#x9664;&#x64CD;&#x4F5C;remove</h3>
+<p>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>db.collection.remove(
+   <query>,
+   {
+     justOne: <boolean>,        #&#x662F;&#x5426;&#x53EA;&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x6761;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#xFF0C;&#x5219;&#x5220;&#x9664;&#x6240;&#x6709;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;
+     writeConcern: <document>
+   }
+)</document></boolean></query></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1493b28a1d21b81cf404&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+&gt; db.gryL.remove({bb:&apos;wowod&apos;},{justOne:true})
+WriteResult({ &quot;nRemoved&quot; : 1 })
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+</code></pre><h3 id="5&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;find">5.&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;find</h3>
+<p><strong>&#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x591A;&#x6B21;&#x7528;&#x5230;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;find&#x8BED;&#x6CD5;&#xFF1A;db.collection.find()</strong></p>
+<h4 id="1&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#x793A;&#x4F8B;">1.&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#x793A;&#x4F8B;</h4>
+<pre><code>&gt; db.gryL.find({aa:&apos;hahal&apos;})
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+&gt; db.gryL.find({aa:&apos;hahal&apos;}).pretty()
+{
+    &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;),
+    &quot;aa&quot; : &quot;hahal&quot;,
+    &quot;bb&quot; : &quot;wowod&quot;
+}
+</code></pre><h4 id="2&#x67E5;&#x8BE2;&#x6761;&#x4EF6;and&#x548C;or">2.&#x67E5;&#x8BE2;&#x6761;&#x4EF6;and&#x548C;or</h4>
+<ul>
+<li>and&#x4F7F;&#x7528;&#x8BED;&#x6CD5;&#xFF1A;db.gryL.find({aa:&apos;hahal&apos;,bb:&apos;wowod&apos;})</li>
+<li>or&#x4F7F;&#x7528;&#x8BED;&#x6CD5;&#xFF1A;db.gryL.find($or:[{aa:&apos;hahal&apos;,bb:&apos;wowod&apos;}])</li>
+<li>and&#x548C;or&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#xFF1A;db.gryL.find({aa:&apos;hahal&apos;,$or:[{aa:&apos;hahal&apos;,bb:&apos;wowod&apos;}]})</li>
+</ul>
+<h2 id="&#x56DB;&#xFF0C;&#x64CD;&#x4F5C;&#x7B26;">&#x56DB;&#xFF0C;&#x64CD;&#x4F5C;&#x7B26;</h2>
+<h3 id="1&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7B26;">1.&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7B26;</h3>
+<pre><code>&#x201C;=&#x201D;&#xFF1A;{aa:&apos;hahal&apos;}
+&#x201C;&gt;&#x201D;&#xFF1A;{aa:{$gt:&apos;hahal&apos;}}
+&#x201C;&gt;=&#x201D;&#xFF1A;{aa:{$gte:&apos;hahal&apos;}}
+&#x201C;&lt;&#x201D;&#xFF1A;{aa:{$lt:&apos;hahal&apos;}}
+&#x201C;&lt;=&#x201D;&#xFF1A;{aa:{$lte:&apos;hahal&apos;}}
+&#x201C;!=&#x201D;&#xFF1A;{aa:{$ne:&apos;hahal&apos;}}
+</code></pre><h3 id="2type-&#x64CD;&#x4F5C;&#x7B26;">2.$type &#x64CD;&#x4F5C;&#x7B26;</h3>
+<p><strong>$type &#x64CD;&#x4F5C;&#x7B26;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0B;&#x7684;&#x6570;&#x636E;&#xFF1A;{aa:{$type:&apos;string&apos;}}</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.find({aa:{$type:&apos;string&apos;}})
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece2876b28a1d21b81cf406&quot;), &quot;aa&quot; : &quot;bmwx5&quot;, &quot;bb&quot; : &quot;bin95&quot; }
+</code></pre><h3 id="3limit-&#x65B9;&#x6CD5;&#x548C;-skip-&#x65B9;&#x6CD5;">3.Limit() &#x65B9;&#x6CD5;&#x548C; skip() &#x65B9;&#x6CD5;</h3>
+<p><strong>mongodb&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;limit&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5728;&#x4E0E;skip()&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x624D;&#x80FD;&#x8FBE;&#x5230;mysql&#x4E2D;limit&#x51FD;&#x6570;&#x7684;&#x6548;&#x679C;&#xFF1A;db.collection.find().limit(number).skip(number)</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;cc&quot; : &quot;bmwx3&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece2876b28a1d21b81cf406&quot;), &quot;aa&quot; : &quot;bmwx5&quot;, &quot;bb&quot; : 918.5 }
+&gt; db.gryL.find().limit(2)
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;cc&quot; : &quot;bmwx3&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+&gt; db.gryL.find().limit(2).skip(1)
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece2876b28a1d21b81cf406&quot;), &quot;aa&quot; : &quot;bmwx5&quot;, &quot;bb&quot; : 918.5 }
+</code></pre><h3 id="4&#x6392;&#x5E8F;-sort-&#x65B9;&#x6CD5;">4.&#x6392;&#x5E8F; sort() &#x65B9;&#x6CD5;</h3>
+<p><strong>&#x5728; MongoDB &#x4E2D;&#x4F7F;&#x7528; sort() &#x65B9;&#x6CD5;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; 1&#xFF08;&#x5347;&#x5E8F;&#xFF09; &#x548C; -1&#xFF08;&#x964D;&#x5E8F;&#xFF09; &#x6765;&#x6307;&#x5B9A;&#x6392;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;db.collection.find().sort({KEY:1})</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.find().sort({_id:1})
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;cc&quot; : &quot;bmwx3&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece2876b28a1d21b81cf406&quot;), &quot;aa&quot; : &quot;bmwx5&quot;, &quot;bb&quot; : 918.5 }
+</code></pre><h3 id="5&#x805A;&#x5408;-aggregate-&#x65B9;&#x6CD5;">5.&#x805A;&#x5408; aggregate() &#x65B9;&#x6CD5;</h3>
+<p><strong>aggregate()&#x7684;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)</strong></p>
+<p>1.&#x5E38;&#x7528;&#x7684;&#x805A;&#x5408;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;sql&#x4E2D;&#x7684;&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF09;&#xFF1A;</p>
+<ul>
+<li>$sum    &#x8BA1;&#x7B97;&#x603B;&#x548C;&#x3002;    </li>
+<li>$avg    &#x8BA1;&#x7B97;&#x5E73;&#x5747;&#x503C;    </li>
+<li>$min    &#x83B7;&#x53D6;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#x5BF9;&#x5E94;&#x503C;&#x5F97;&#x6700;&#x5C0F;&#x503C;&#x3002;    </li>
+<li>$max    &#x83B7;&#x53D6;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#x5BF9;&#x5E94;&#x503C;&#x5F97;&#x6700;&#x5927;&#x503C;&#x3002;    </li>
+<li>$push    &#x5728;&#x7ED3;&#x679C;&#x6587;&#x6863;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x3002;    </li>
+<li>$addToSet    &#x5728;&#x7ED3;&#x679C;&#x6587;&#x6863;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x4F46;&#x4E0D;&#x521B;&#x5EFA;&#x526F;&#x672C;&#x3002;    </li>
+<li>$first    &#x6839;&#x636E;&#x8D44;&#x6E90;&#x6587;&#x6863;&#x7684;&#x6392;&#x5E8F;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x6570;&#x636E;&#x3002;    </li>
+<li>$last    &#x6839;&#x636E;&#x8D44;&#x6E90;&#x6587;&#x6863;&#x7684;&#x6392;&#x5E8F;&#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.aggregate([{$group:{_id:&quot;$aa&quot;,cou:{$sum:1}}}])
+{ &quot;_id&quot; : &quot;hahal&quot;, &quot;cou&quot; : 1 }
+{ &quot;_id&quot; : &quot;bmwx5&quot;, &quot;cou&quot; : 2 }
+&gt; db.gryL.aggregate([{$group:{_id:&quot;$aa&quot;,cou:{$first:&apos;$bb&apos;}}}])
+{ &quot;_id&quot; : &quot;hahal&quot;, &quot;cou&quot; : &quot;wowod&quot; }
+{ &quot;_id&quot; : &quot;bmwx5&quot;, &quot;cou&quot; : 911 }
+</code></pre><p><strong>2.&#x805A;&#x5408;&#x7BA1;&#x9053;&#xFF1A;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5C06;&#x5F53;&#x524D;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7BA1;&#x9053;&#x7684;&#x6784;&#x4EF6;&#x6709;&#xFF1A;&#x7B5B;&#x9009;&#x3001;&#x6295;&#x5C04;&#x3001;&#x5206;&#x7EC4;&#x3001;&#x6392;&#x5E8F;&#x3001;&#x9650;&#x5236;&#x548C;&#x8DF3;&#x8FC7;&#x3002;</strong></p>
+<ul>
+<li>$project&#xFF1A;&#x4FEE;&#x6539;&#x8F93;&#x5165;&#x6587;&#x6863;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x91CD;&#x547D;&#x540D;&#x3001;&#x589E;&#x52A0;&#x6216;&#x5220;&#x9664;&#x57DF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4EE5;&#x53CA;&#x5D4C;&#x5957;&#x6587;&#x6863;&#x3002;</li>
+<li>$match&#xFF1A;&#x7528;&#x4E8E;&#x8FC7;&#x6EE4;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x8F93;&#x51FA;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x3002;$match&#x4F7F;&#x7528;MongoDB&#x7684;&#x6807;&#x51C6;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>$limit&#xFF1A;&#x7528;&#x6765;&#x9650;&#x5236;MongoDB&#x805A;&#x5408;&#x7BA1;&#x9053;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x6863;&#x6570;&#x3002;</li>
+<li>$skip&#xFF1A;&#x5728;&#x805A;&#x5408;&#x7BA1;&#x9053;&#x4E2D;&#x8DF3;&#x8FC7;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4F59;&#x4E0B;&#x7684;&#x6587;&#x6863;&#x3002;</li>
+<li>$unwind&#xFF1A;&#x5C06;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x62C6;&#x5206;&#x6210;&#x591A;&#x6761;&#xFF0C;&#x6BCF;&#x6761;&#x5305;&#x542B;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
+<li>$group&#xFF1A;&#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x5206;&#x7EC4;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#x3002;</li>
+<li>$sort&#xFF1A;&#x5C06;&#x8F93;&#x5165;&#x6587;&#x6863;&#x6392;&#x5E8F;&#x540E;&#x8F93;&#x51FA;&#x3002;</li>
+<li>$geoNear&#xFF1A;&#x8F93;&#x51FA;&#x63A5;&#x8FD1;&#x67D0;&#x4E00;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x6709;&#x5E8F;&#x6587;&#x6863;&#x3002;</li>
+</ul>
+<p>&#x793A;&#x4F8B;1&#xFF1A;</p>
+<pre><code>&gt;  db.gryL.aggregate({$project:{&apos;ssd&apos;:&apos;$aa&apos;,bb:1}})
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;bb&quot; : 911, &quot;ssd&quot; : &quot;bmwx5&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;bb&quot; : &quot;wowod&quot;, &quot;ssd&quot; : &quot;hahal&quot; }
+{ &quot;_id&quot; : ObjectId(&quot;5ece2876b28a1d21b81cf406&quot;), &quot;bb&quot; : 918.5, &quot;ssd&quot; : &quot;bmwx5&quot; }
+</code></pre><p>&#x793A;&#x4F8B;2&#xFF1A;</p>
+<pre><code>&gt; db.gryL.aggregate([{$match:{aa:&apos;bmwx5&apos;}},{$group:{_id:&quot;$aa&quot;,cou:{$first:&apos;$bb&apos;}}}])
+{ &quot;_id&quot; : &quot;bmwx5&quot;, &quot;cou&quot; : 911 }
+</code></pre><p>&#x83B7;&#x53D6;aa:&apos;bmwx5&apos;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x9001;&#x5230;&#x4E0B;&#x4E00;&#x9636;&#x6BB5;$group&#x7BA1;&#x9053;&#x64CD;&#x4F5C;&#x7B26;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="6&#x7D22;&#x5F15;-createindex-&#x65B9;&#x6CD5;">6.&#x7D22;&#x5F15; createIndex() &#x65B9;&#x6CD5;</h3>
+<p><strong>mongodb&#x7D22;&#x5F15;&#x7684;&#x4F5C;&#x7528;&#x4E0E;sql&#x7C7B;&#x4F3C;</strong></p>
+<p>&#x7D22;&#x5F15;&#x7684;&#x7B80;&#x5355;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>&gt; db.gryL.createIndex({&apos;aa&apos;:1})        #&#x5728;&#x5217;&apos;aa&apos;&#x521B;&#x5EFA;&#x7D22;&#x5F15;
+{
+&quot;createdCollectionAutomatically&quot; : false,
+&quot;numIndexesBefore&quot; : 1,
+&quot;numIndexesAfter&quot; : 2,
+&quot;ok&quot; : 1
+}
+&gt; db.gryL.getIndexes()        #&#x67E5;&#x770B;&#x8868;&#x4E2D;&#x5DE6;&#x53F3;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;
+[
+{
+&quot;v&quot; : 2,
+&quot;key&quot; : {
+&quot;_id&quot; : 1
+},
+&quot;name&quot; : &quot;_id_&quot;,
+&quot;ns&quot; : &quot;mdb1.gryL&quot;
+},
+{
+&quot;v&quot; : 2,
+&quot;key&quot; : {
+&quot;aa&quot; : 1
+},
+&quot;name&quot; : &quot;aa_1&quot;,
+&quot;ns&quot; : &quot;mdb1.gryL&quot;
+}
+]
+&gt; db.gryL.dropIndexes()    #&#x5220;&#x9664;&#x7D22;&#x5F15;
+{
+&quot;nIndexesWas&quot; : 2,
+&quot;msg&quot; : &quot;non-_id indexes dropped for collection&quot;,
+&quot;ok&quot; : 1
+}
+&gt; db.gryL.getIndexes()
+[
+{
+&quot;v&quot; : 2,
+&quot;key&quot; : {
+&quot;_id&quot; : 1
+},
+&quot;name&quot; : &quot;_id_&quot;,
+&quot;ns&quot; : &quot;mdb1.gryL&quot;
+}
+]
+</code></pre><p><a href="https://blog.51cto.com/1937519/2299640" target="_blank">https://blog.51cto.com/1937519/2299640</a></p>
+<h2 id="&#x4E94;&#xFF0C;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;">&#x4E94;&#xFF0C;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;</h2>
+<h3 id="&#x5907;&#x4EFD;mongodb">&#x5907;&#x4EFD;mongodb</h3>
+<p><strong>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;mongodump -h [&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF1A;&#x7AEF;&#x53E3;&#x53F7;] -d [&#x6570;&#x636E;&#x5E93;&#x540D;] -o [&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x8DEF;&#x5F84;]</strong></p>
+<p>&#x8FD0;&#x884C;&#x5982;&#x4E0B;&#x811A;&#x672C;&#xFF0C;&#x4F1A;&#x5728;d&#xFF1A;\data\log&#x8DEF;&#x5F84;&#x4E0B;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;mdb1&#x7684;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>C:\Program Files\MongoDB\Server\4.2\bin&gt;mongodump -h 127.0.0.1:27017 -d mdb1 -o D:\data\log
+2020-05-28T14:40:06.870+0800writing mdb1.gryL to
+2020-05-28T14:40:06.889+0800done dumping mdb1.gryL (5 documents)
+</code></pre><h3 id="&#x6062;&#x590D;mongodb">&#x6062;&#x590D;mongodb</h3>
+<p><strong>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;mongodump -h [&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF1A;&#x7AEF;&#x53E3;&#x53F7;] -d [&#x6570;&#x636E;&#x5E93;&#x540D;] -o [&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x8DEF;&#x5F84;]</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>&#x5220;&#x9664;&#x539F;&#x6709;&#x7684;mdb1</p>
+<pre><code>&gt; show dbs
+mdb1    0.000GB
+&gt; use mdb1
+switched to db mdb1
+&gt; db.dropDatabase()
+{ &quot;dropped&quot; : &quot;mdb1&quot;, &quot;ok&quot; : 1 }
+&gt; show dbs
+
+&gt; exit
+bye
+</code></pre><p>&#x6267;&#x884C;&#x6062;&#x590D;&#x547D;&#x4EE4;</p>
+<pre><code>C:\Program Files\MongoDB\Server\4.2\bin&gt;mongorestore -h 127.0.0.1:27017 -d mdb1 D:\data\log\mdb1
+2020-05-28T14:56:17.088+0800the --db and --collection args should only be used when restoring from a BSON file. Other uses are deprecated and will not exist in the future; use ......
+</code></pre><p>&#x91CD;&#x65B0;&#x8FDE;&#x63A5;mongodb&#x67E5;&#x770B;&#x6570;&#x636E;&#x5DF2;&#x7ECF;&#x6062;&#x590D;&#xFF1A;</p>
+<pre><code>C:\Program Files\MongoDB\Server\4.2\bin&gt;mongo
+MongoDB shell version v4.2.7
+......
+&gt; show dbs
+mdb1    0.000GB
+&gt; use mdb1
+switched to db mdb1
+&gt; db.gryL.find()
+{ &quot;_id&quot; : ObjectId(&quot;5ece1465b28a1d21b81cf403&quot;), &quot;aa&quot; : &quot;bmwx5&quot;, &quot;bb&quot; : 911 }
+{ &quot;_id&quot; : ObjectId(&quot;5ece15ebb28a1d21b81cf405&quot;), &quot;aa&quot; : &quot;hahal&quot;, &quot;bb&quot; : &quot;wowod&quot; }
+......
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="MySql存储过程基础.html" class="navigation navigation-next navigation-unique" aria-label="Next page: MySql存储过程基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB数据库学习总结","level":"1.10","depth":1,"next":{"title":"MySql存储过程基础","level":"1.11","depth":1,"path":"DB/MySql存储过程基础.md","ref":"DB/MySql存储过程基础.md","articles":[]},"previous":{"title":"数据库操作","level":"1.9","depth":1,"ref":"","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DB/MongoDB数据库学习总结.md","mtime":"2020-06-04T01:01:48.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-09T09:33:52.925Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
