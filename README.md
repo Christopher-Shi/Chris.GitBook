@@ -142,8 +142,7 @@ n个...
 示例：
 
 ```
-![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
+![blockchain](https://image.baidu.com/search/detail?z=0&word=%E6%91%84%E5%BD%B1%E5%B8%88%E6%9D%B0%E5%A4%AB%E4%BD%9C%E5%93%81&hs=0&pn=3&spn=0&di=0&pi=5139273732223422616&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cs=1808288369%2C2886187605&os=1464113726%2C3911183433&simid=&adpicid=0&lpn=0&fm=&sme=&cg=&bdtype=-1&oriquery=&objurl=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853&fromurl=&gsm=40000000004&catename=pcindexhot&islist=&querylist= "百度图片")
 ```
 
 效果如下：
