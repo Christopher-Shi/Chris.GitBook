@@ -169,18 +169,3 @@ public class ExecProcedureResponse
     public List<PingSummary> PingSummaries { get; set; }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
