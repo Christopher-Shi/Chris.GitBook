@@ -1,10 +1,33 @@
 {
     "gitbook": "3.x.x",
-    "plugins": ["favicon", "yahei", "github", "autotheme", "-lunr", "-search",
-        "search-plus", "prism", "-highlight", "github-buttons", "splitter",
-        "-sharing", "sharing-plus", "page-footer-ex", "expandable-chapters-small",
-        "book-summary-scroll-position-saver", "anchors", "anchor-navigation-ex", "sitemap-general",
-        "copy-code-button", "multipart","edit-link-plus","editlink","toc","expandable-chapters","insert-logo","advanced-emoji"
+    "plugins": [
+        "favicon",
+        "yahei",
+        "github",
+        "autotheme",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "prism",
+        "-highlight",
+        "github-buttons",
+        "splitter",
+        "-sharing",
+        "sharing-plus",
+        "page-footer-ex",
+        "expandable-chapters-small",
+        "book-summary-scroll-position-saver",
+        "anchors",
+        "anchor-navigation-ex",
+        "sitemap-general",
+        "copy-code-button",
+        "multipart",
+        "edit-link-plus",
+        "editlink",
+        "toc",
+        "expandable-chapters",
+        "insert-logo",
+        "advanced-emoji"
     ],
     "pluginsConfig": {
         "theme-default": {
@@ -18,9 +41,36 @@
             "url": "https://github.com/Christopher-Shi"
         },
         "autotheme": {
-            "white": [9, 10, 11, 12, 13, 14, 15, 16, 17],
-            "sepia": [6, 7, 8, 18, 19],
-            "night": [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]
+            "white": [
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+            ],
+            "sepia": [
+                6,
+                7,
+                8,
+                18,
+                19
+            ],
+            "night": [
+                20,
+                21,
+                22,
+                23,
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
         },
         "prism": {
             "css": [
@@ -28,19 +78,21 @@
             ]
         },
         "github-buttons": {
-            "buttons": [{
-                "user": "xiaobei930",
-                "repo": "LearningNotes",
-                "type": "star",
-                "size": "small",
-				"count": true
-              }]
+            "buttons": [
+                {
+                    "user": "xiaobei930",
+                    "repo": "LearningNotes",
+                    "type": "star",
+                    "size": "small",
+                    "count": true
+                }
+            ]
         },
         "editlink": {
             "base": "https://github.com/Christopher-Shi/Chris.GitBook/blob/master",
             "label": "Edit",
             "multilingual": false
-          },
+        },
         "sharing": {
             "douban": false,
             "facebook": false,
@@ -60,14 +112,19 @@
             "weibo": true,
             "whatsapp": false,
             "all": [
-                "facebook", "google", "twitter",
-                "weibo", "instapaper", "linkedin",
-                "pocket", "stumbleupon"
+                "facebook",
+                "google",
+                "twitter",
+                "weibo",
+                "instapaper",
+                "linkedin",
+                "pocket",
+                "stumbleupon"
             ]
         },
         "edit-link-plus": {
             "base": "https://github.com/Christopher-Shi/Chris.GitBook/blob/master",
-            "label": { 
+            "label": {
                 "en": "Edit This Page",
                 "zh": "编辑本页"
             }
@@ -77,7 +134,7 @@
             "markdown": true,
             "update_label": "此页面修订于：",
             "update_format": "YYYY-MM-DD HH:mm:ss"
-          },
+        },
         "anchor-navigation-ex": {
             "showLevel": false,
             "associatedWithSummary": false,
@@ -114,7 +171,7 @@
         "insert-logo": {
             "url": "/assets/logo/logo.png",
             "style": "background: none; max-height: 30px; min-height: 30px"
-          }
+        }
     },
     "styles": {
         "website": "assets/styles/website.css"
