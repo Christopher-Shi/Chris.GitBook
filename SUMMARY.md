@@ -35,6 +35,7 @@
       - [JavaScript深入之继承的多种方式和优缺点](JavaScript/深入系列文章/JavaScript深入之继承的多种方式和优缺点.md)
       - [JavaScript深入之词法作用域和动态作用域](JavaScript/深入系列文章/JavaScript深入之词法作用域和动态作用域.md)
       - [JavaScript深入之闭包](JavaScript/深入系列文章/JavaScript深入之闭包.md)
+      
   - 专题系列文章
     - [JavaScript专题之jQuery通用遍历方法each的实现](JavaScript/专题系列文章/JavaScript专题之jQuery通用遍历方法each的实现.md)
     - [JavaScript专题之乱序](JavaScript/专题系列文章/JavaScript专题之乱序.md)
@@ -56,16 +57,18 @@
     - [JavaScript专题之跟着underscore学节流](JavaScript/专题系列文章/JavaScript专题之跟着underscore学节流.md)
     - [JavaScript专题之跟着underscore学防抖](JavaScript/专题系列文章/JavaScript专题之跟着underscore学防抖.md)
     - [JavaScript专题之递归](JavaScript/专题系列文章/JavaScript专题之递归.md)
+    
   - underscore 系列文章
     - [underscore 系列之如何写自己的 underscore](JavaScript/underscore 系列文章/underscore 系列之如何写自己的 underscore.md)
     - [underscore 系列之链式调用](JavaScript/underscore 系列文章/underscore 系列之链式调用.md)
     - [underscore 系列之内部函数 cb 和 optimizeCb](JavaScript/underscore 系列文章/underscore 系列之内部函数 cb 和 optimizeCb.md)
     - [underscore 系列之内部函数 restArgs](JavaScript/underscore 系列文章/underscore 系列之内部函数 restArgs.md)
     - [underscore 系列之防冲突与 Utility Functions](JavaScript/underscore 系列文章/underscore 系列之防冲突与 Utility Functions.md)
-    - [underscore 系列之实现一个模板引擎(上)](JavaScript/underscore 系列文章/underscore 系列之实现一个模板引擎(上).md)
-    - [underscore 系列之实现一个模板引擎(下)](JavaScript/underscore 系列文章/underscore 系列之实现一个模板引擎(下).md)
+    - [underscore 系列之实现一个模板引擎(上)](JavaScript/underscore 系列文章/underscore 系列之实现一个模板引擎上.md)
+    - [underscore 系列之实现一个模板引擎(下)](JavaScript/underscore 系列文章/underscore 系列之实现一个模板引擎下.md)
     - [underscore 系列之字符实体与 _.escape](JavaScript/underscore 系列文章/underscore 系列之字符实体与 _.escape.md)
     - [underscore 的源码该如何阅读？](JavaScript/underscore 系列文章/underscore 的源码该如何阅读？.md)
+    
   - ES6 系列文章
     - [ES6 系列之 let 和 const](JavaScript/ES6 系列文章/ES6 系列之 let 和 const.md)
     - [ES6 系列之模板字符串](JavaScript/ES6 系列文章/ES6 系列之模板字符串.md)
@@ -76,12 +79,12 @@
     - [ES6 系列之 WeakMap](JavaScript/ES6 系列文章/ES6 系列之 WeakMap.md)
     - [ES6 系列之我们来聊聊 Promise](JavaScript/ES6 系列文章/ES6 系列之我们来聊聊 Promise.md)
     - [ES6 系列之 Generator 的自动执行](JavaScript/ES6 系列文章/ES6 系列之 Generator 的自动执行.md)
-    - [ES6 系列之我们来聊聊 Async](JavaScript/ES6 系列文章/ES6 系列之我们来聊聊 Asyn.md)
+    - [ES6 系列之我们来聊聊 Async](JavaScript/ES6 系列文章/ES6 系列之我们来聊聊 Async.md)
     - [ES6 系列之异步处理实战](JavaScript/ES6 系列文章/ES6 系列之异步处理实战.md)
     - [ES6 系列之 Babel 将 Generator 编译成了什么样子](JavaScript/ES6 系列文章/ES6 系列之 Babel 将 Generator 编译成了什么样子.md)
     - [ES6 系列之 Babel 将 Async 编译成了什么样子](JavaScript/ES6 系列文章/ES6 系列之 Babel 将 Async 编译成了什么样子.md)
-    - [ES6 系列之 Babel 是如何编译 Class 的(上)](JavaScript/ES6 系列文章/ES6 系列之 Babel 是如何编译 Class 的(上).md)
-    - [ES6 系列之 Babel 是如何编译 Class 的(下)](JavaScript/ES6 系列文章/ES6 系列之 Babel 是如何编译 Class 的(下).md)
+    - [ES6 系列之 Babel 是如何编译 Class 的(上)](JavaScript/ES6 系列文章/ES6 系列之 Babel 是如何编译 Class 的上.md)
+    - [ES6 系列之 Babel 是如何编译 Class 的(下)](JavaScript/ES6 系列文章/ES6 系列之 Babel 是如何编译 Class 的下.md)
     - [ES6 系列之 defineProperty 与 proxy](JavaScript/ES6 系列文章/ES6 系列之 defineProperty 与 proxy.md)
     - [ES6 系列之模块加载方案](JavaScript/ES6 系列文章/ES6 系列之模块加载方案.md)
     - [ES6 系列之我们来聊聊装饰器](JavaScript/ES6 系列文章/ES6 系列之我们来聊聊装饰器.md)
